@@ -1,0 +1,196 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - yep
+    - ok
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - who are you?
+
+- intent: entertain_me
+  examples: |
+    - tell me a joke
+    - entertain me
+    - say something funny
+    - make some funny jokes
+    - I'd like a joke
+
+
+- intent: web_infor
+  examples: |
+    - I wanna know company information
+    - Some website infor
+    - tell me about your website
+    - something about your website
+    - some company information
+    - show me some website information
+    - give me website information
+
+- intent: movie1
+  examples: |
+    - do you like movies?
+    - how do you feel about movies?
+    - do you watch movies?
+    - tell me something about movies.
+    - how about movies?
+
+- intent: good_movies
+  examples: |
+    - can you recommend me some of the good movies?
+    - I'd like some really good movies.
+    - would you recommend me some movies?
+    - Is there any good movies you can give me.
+    - what kind of movie do you like?
+    - recommend me some movies
+
+- intent: tell_name
+  examples: |
+    - you can call me [Xinyuan](Username)
+    - [Ram](Username) is fine
+    - [Markula](Username)
+    - [Mike](Username)
+    - [Jake](Username)
+    - [Ram](Username)
+    - [xinyuan](Username)
+    - call me[Ram](Username)
+    - call me[mengqi](Username)
+
+
+- intent: my_order
+  examples: |
+    - Where is my order?
+    - I want to know about my order
+    - Order information please
+    - Track my order
+    - I wanna check my order
+    - order please
+    - show me my order
+    - is there anyway I can check my order?
+  
+- intent: order_details
+  examples: |
+    - My order number is [012357](order_number)
+    - Here's my order number [124512](order_number)
+    - [123456](order_number)
+    - [512376](order_number)
+    - [784500](order_number)
+    - [091282](order_number)
+    - [490304](order_number)
+    - [089762](order_number)
+    - [869345](order_number)
+    - [453180](order_number)
+    - [726704](order_number)
+    - [459871](order_number)
+    - Order number is [O33211](order_number)
+    - Order number is [357099](order_number)
+    - Here is the order number [436737](order_number) 
+    - Here it is [O44464](order_number)
+    - Yes, here it is [312350](order_number)
+
+- intent: thank_you
+  examples: |
+    - thanks
+    - thank you
+    - you really helped me
+    - thank you for your help
+    - thank u
+
+- intent: what_can_do
+  examples: |
+    - what can you do?
+    - what are you capable of?
+    - what function do you have?
+    - offer me some options
+    - help
+    - I need some help
+    - can you give me some help?
+    - help me please
+
+# - intent: out_of_scope
+#   examples: |
+#     - who do you like most
+#     - I want to order food
+#     - What is 2 + 2?
+#     - Who's the US President?
+#     - are you an idot?
+#     - do you love me?
+
+- intent: query_weather
+  examples: |
+    - what's the weather now?
+    - check the weather
+    - what's the weather in Oulu
+    - what's the weather in Nanjing
+    - What's the weather tomorrow
+    - what's the weather 10 days later
+    - what's the weather yesterday
+
+- intent: call_supervisor
+  examples: |
+    - may I contact with the supervisor?
+    - please connect me with your supervisor.
+    - supervisor please.
+    - I'd like to call a supervisor
+
+- intent: send_email
+  examples: |
+    - may I have an email address to send?
+    - please give me an email
+    - email please
+    - I'd like an email
+
+- intent: call_phone
+  examples: |
+    - may I call an executive?
+    - call on phone is ok
+    - I'd lile to talk on phone.

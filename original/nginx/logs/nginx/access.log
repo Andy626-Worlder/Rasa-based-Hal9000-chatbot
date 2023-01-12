@@ -1,0 +1,6 @@
+172.29.0.1 - - [13/Oct/2022:01:48:55 +0000] "GET / HTTP/1.1" 200 2628 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" "-"
+172.29.0.1 - - [13/Oct/2022:01:48:55 +0000] "GET /css/styles.css HTTP/1.1" 200 4543 "http://localhost/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" "-"
+172.29.0.1 - - [13/Oct/2022:01:48:55 +0000] "GET /images/hal_picture.jpg HTTP/1.1" 200 85497 "http://localhost/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" "-"
+172.29.0.1 - - [13/Oct/2022:01:57:17 +0000] "GET /gen204?invalidResponse=q=https%3A%2F%2Ftranslate.googleapis.com%2Ftranslate_a%2Fsingle%3Fclient%3Dgtx%26s,ql=141,r=,rl=0 HTTP/1.1" 404 555 "http://localhost/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" "-"
+172.29.0.1 - - [13/Oct/2022:02:02:43 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" "-"
+172.29.0.1 - - [13/Oct/2022:02:03:31 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" "-"

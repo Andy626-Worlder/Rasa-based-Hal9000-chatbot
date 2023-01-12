@@ -1,0 +1,146 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+#  Here starts to correspond to stories.yml
+- rule: entertain the user by tell jokes
+  steps:
+  - intent: entertain_me
+  - action: utter_entertain
+  - action: utter_anything_else
+
+- rule: tell about web information
+  steps:
+  - intent: web_infor
+  - action: utter_web_infor
+  - action: utter_anything_else
+
+# movie part
+- rule: chat about movies
+  steps:
+  - intent: movie1
+  - action: utter_movie1
+
+- rule: recommend movies
+  steps:
+  - intent: good_movies
+  - action: utter_recommend_movies
+  - action: utter_anything_else
+# 
+
+# greetings and fill name
+- rule: greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: tell name
+  steps:
+  - intent: tell_name
+  - action: action_greet_name
+  - action: utter_name
+  - action: utter_option1
+# 
+
+- rule: query weather
+  steps:
+  - intent: query_weather
+  - action: utter_weather
+  - action: utter_anything_else
+
+- rule: thank u
+  steps:
+  - intent: thank_you
+  - action: utter_pleasure
+
+- rule: help (what can you do)
+  steps:
+  - intent: what_can_do
+  - action: utter_option1
+
+
+# the two conditions a anything else can have
+- rule: deny the request to 'help'
+  steps:
+  - intent: deny
+  - action: utter_goodbye
+
+- rule: affirm the request to 'help'
+  steps:
+  - intent: affirm
+  - action: utter_option1
+# 
+
+# - rule: Activate form
+#   steps:
+#   - intent: my_order
+#   - action: order_number_form
+#   - active_loop: order_number_form
+
+# - rule: deactivate form 
+#   condition:
+#   - active_loop: order_number_form
+#   steps:
+#   - action: order_number_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   - action: utter_order_valid
+
+- rule: fixed order 
+  steps:
+  - intent: my_order
+  - action: utter_ask_order_number
+
+- rule: fixed status
+  steps:
+  - intent: order_detail
+  - action: utter_status
+
+
+  # - action: query_order_details
+
+# - rule: out-of-scope
+#   steps:
+#   - intent: out_of_scope
+#   - action: utter_out_of_scope
+
+# - rule: Implementation of the Two-Stage-Fallback
+#   steps:
+#   - intent: nlu_fallback
+#   - action: action_two_stage_fallback
+#   - active_loop: action_two_stage_fallback
+
+# - rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+#   steps:
+#   - intent: nlu_fallback
+#   - action: utter_please_rephrase
+
+
+- rule: supervisor
+  steps:
+  # - action: utter_default
+  - intent: call_supervisor
+  - action: utter_call_supervisor
+
+- rule: email
+  steps:
+  # - action: utter_default
+  - intent: send_email
+  - action: utter_send_email
+
+- rule: phone call
+  steps:
+  # - action: utter_default
+  - intent: call_phone
+  - action: utter_call_phone

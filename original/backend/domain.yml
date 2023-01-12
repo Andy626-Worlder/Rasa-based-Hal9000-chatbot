@@ -1,0 +1,166 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - bot_challenge
+  - entertain_me
+  - good_movies
+  - movie1
+  - tell_name
+  - thank_you
+  - web_infor
+  - my_order
+  - order_details
+  - what_can_do
+  - query_weather
+  - call_supervisor # 1
+  - send_email # 2
+  - call_phone # 3
+
+
+
+entities:
+  - Username
+  - order_number
+
+slots:
+  Username:
+    type: text
+    mappings:
+    - type: from_text
+      entity: Username
+
+  order_number:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: order_number
+      conditions:
+      - active_loop: order_number_form
+        #requested_slot: order_number
+
+forms:
+  order_number_form: # better name it with the same name + form
+    required_slots:
+    - order_number
+
+actions:
+ - action_greet_name
+#  - utter_order_valid
+ - query_order_details
+ - utter_ask_order_number
+ - validate_order_number_form
+ - action_ValidateOrderNumber
+
+
+responses:
+  utter_name:
+  - text: "Welcome {Username}, is there anything I can help you?"
+  - text: "Welcome {Username}, My name is Hal, is there anything I can help you?"
+  - text: "Hello {Username}, is there anything I can help you?"
+
+  utter_option1:
+  - text: "I can remind you what I am capable of\n 
+  \n \tinformation about the website
+  \n \n \tchecking package orders
+  \n \n \tchat about movies
+  \n \n \tSome jokes
+  \n \n \tCheck weather
+  \n \nPlease tell me what I can do for you."
+
+  utter_entertain:
+  - text: "Here it goes:\n \nWhat are a shark's two most favorite words? \n \nMan overboard!"
+
+  utter_web_infor:
+  - text: "On my way sir\n \n
+​        \n HAL 2001 is a fan site developed and maintained by a group of fans of the movie 2001: A Space Odyssey. 
+​        \n The  site provides access to the movie trivia, script, comprehensive profile on every major actor in the movie, 
+​        \n behind the scenes photos, videos, audition tapes, merchandise, etc. 
+​        \n The site has had a steady flow of visitors,  and even occasional increase in user traffic. 
+​        \n The founders want to further enhance the experience of the  visitors, and provide them with more entertaining ways to engage with the site. 
+​        \n Inspired by the HAL,the founders of the website want to  develop and deploy a chatbot that will have HAL’s mannerisms. 
+​        \n \nwhich has made me. "
+
+  utter_movie1:
+  - text: "I use movies as a tool to train myself for human emotion comprehension.\n Probably you can say: [recommend me some movies]"
+
+  utter_recommend_movies:
+  - text: "To remind first, they are all my personal favorites, please don't judge me:\n\n 
+​         \n \tShawshank Redemption 
+​         \n \tForrest Gump 
+​         \n \tApocalypse Now 
+​         \n \tGod Father 
+​         \n \tBroken Back Mountain"
+
+  # utter_track_order:
+  # - text: "In that case, do me a favour and share your order number"
+  
+  utter_ask_order_number:
+  - text: "Please tell me your order number."
+
+  # utter_order_valid:
+  # - text: "Thank you for cooperating"
+
+  utter_greet:
+  - text: "How should I address you?"
+
+  utter_weather:
+  - text: "Now the weather is light rain to heavy rain. You'd better take an umbrella.\n \n"
+
+  utter_status:
+  - text: "I see the owner is Andy, and it is delayed."
+
+  # utter_out_of_scope:
+  # - text: "Sorry, I can't handle that request. 
+  # \n You need to talk with the executive, and I am not designed to provide that option for you :)\n"
+
+  utter_default:
+  - text: "I am sorry I can't parse that, but may I present three ways to do with it. \n \n
+        \t Call the supervisor (tips: supervisor) \n \n
+        \t Give me more details through e-mail (tips: email)\n \n
+        \t Speak to an human executive on phone call right now (tips: phone) \n"
+
+
+  utter_call_supervisor:
+  - text: "Please wait a second {Username}, I am connecting you to the Supervisor Xinyuan Chen"
+
+  utter_send_email:
+  - text: "Here lies the email you can send to : xinyuanchenac@gmail.com"
+
+  utter_call_phone:
+  - text: "Would it be ok that the executive to call you right now."
+
+  # utter_please_rephrase:
+  # - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+
+  # utter_ask_rephrase:
+  # - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+
+  # utter_default:
+  # - text: I'm sorry, I can't help you.
+
+
+
+  utter_iamabot:
+  - text: "I am developed by Xinyuan Chen to be tested in the final exam, and will be terminated by the beginning of Sept. Since I am supported by a one month free cloud"
+
+  utter_goodbye:
+  - text: "Hope see you soon"
+  - text: "See you next time"
+  - text: "I'll be back(thumbs up)"
+
+  utter_pleasure:
+  - text: "I'm always here"
+  - text: "My pleasure"
+
+  utter_anything_else:
+  - text: "Is there anything I can do for you?"
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,76 @@
+# This file contains the different endpoints your bot can use.
+
+# Server where the models are pulled from.
+# https://rasa.com/docs/rasa/model-storage#fetching-models-from-a-server
+
+#models:
+#  url: http://my-server.com/models/default_core@latest
+#  wait_time_between_pulls:  10   # [optional](default: 100)
+
+# Server which runs your custom actions.
+# https://rasa.com/docs/rasa/custom-actions
+
+action_endpoint:
+ url: "http://118.31.117.6:5055/webhook"
+
+# Tracker store which is used to store the conversations.
+# By default the conversations are stored in memory.
+# https://rasa.com/docs/rasa/tracker-stores
+
+#tracker_store:
+#    type: redis
+#    url: <host of the redis instance, e.g. localhost>
+#    port: <port of your redis instance, usually 6379>
+#    db: <number of your database within redis, e.g. 0>
+#    password: <password used for authentication>
+#    use_ssl: <whether or not the communication is encrypted, default false>
+
+#tracker_store:
+#    type: mongod
+#    url: <url to your mongo instance, e.g. mongodb://localhost:27017>
+#    db: <name of the db within your mongo instance, e.g. rasa>
+#    username: <username used for authentication>
+#    password: <password used for authentication>
+
+# Event broker which all conversation events should be streamed to.
+# https://rasa.com/docs/rasa/event-brokers
+
+#event_broker:
+#  url: localhost
+#  username: username
+#  password: password
+#  queue: queue
+# lock_store:
+#     type: 'sentinel_lock_store.RedisSentinelLockStore'
+#     master: mymaster
+#     host: 191.161.6.191 #示例127.0.0.1
+#     port1: 6379
+#     port2: 6380
+#     port3: 6381
+#     db: 0
+#     password: password  # 输入密码
+#     key_prefix: rasa
+#     socket_timeout: 0.5
+#     #设置为0.5秒, 所以阻塞0.5秒后会触发超时异常
+    
+# tracker_store:
+#     type: 'sentinel_tracker_store.RedisSentinelTrackerStore'
+#     url: 191.161.6.191 #示例127.0.0.1
+#     master: mymaster
+#     port1: 6379
+#     port2: 6380
+#     port3: 6381
+#     db: 5
+#     password: password  # 输入密码
+#     key_prefix: rasa
+#     socket_timeout: 5 #5
+#     record_exp: 300 #以秒为单位记录过期时间
+
+tracker_store:
+    type: SQL
+    dialetc: "sqlite"
+    url: "sqlite:///./rasa.db"
+    db: "rasa.db"
+    password: #<password used for authentication>
+    use_ssl: #<whether or not the communication is encrypted, default false>
+

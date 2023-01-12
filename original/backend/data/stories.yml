@@ -1,0 +1,110 @@
+version: "3.1"
+
+stories:
+
+- story: entertain user
+  steps:
+  - intent: entertain_me
+  - action: utter_entertain
+  - action: utter_anything_else
+  # - intent: deny
+  # - action: utter_goodbye
+  #  Tried, but try not to put multipule intents into one story.
+
+- story: web infor
+  steps:
+  - intent: web_infor
+  - action: utter_web_infor
+  - action: utter_anything_else
+
+- story: chat1 movie
+  steps:
+  - intent: movie1
+  - action: utter_movie1
+
+- story: chat2 movie
+  steps:
+  - intent: good_movies
+  - action: utter_recommend_movies
+  - action: utter_anything_else
+
+- story: fill in name by greeting and provide options
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: tell_name
+  - action: action_greet_name
+  - action: utter_name
+  - action: utter_option1
+
+
+- story: query weather
+  steps:
+  - intent: query_weather
+  - action: utter_weather
+  - action: utter_anything_else
+
+
+- story: thank you
+  steps:
+  - intent: thank_you
+  - action: utter_pleasure
+
+- story: what can you do
+  steps:
+  - intent: what_can_do
+  - action: utter_option1
+
+- story: anything else (affirm)
+  steps:
+  - action: utter_anything_else
+  - intent: affirm
+  - action: utter_option1
+
+
+- story: anything else (deny)
+  steps:
+  - action: utter_anything_else
+  - intent: deny
+  - action: utter_goodbye
+
+
+- story: track order
+  steps:
+  - intent: my_order
+  - action: order_number_form
+  - active_loop: order_number_form # activate the form to accept informations
+  - slot_was_set:
+    - requested_slot: order_number
+  - slot_was_set:
+    - order_number: order_number
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_order_valid
+  # - action: utter_anything_else
+  # - intent: deny
+  # - action: utter_goodbye
+  # the prediction of the action 'utter_anything_else' in story 'track order' is 
+  # contradicting with rule(s) 'deactivate form' 
+
+
+- story: three ways to go -- 1-- supervisor
+  steps:
+  # - action: utter_default
+  - intent: call_supervisor
+  - action: utter_call_supervisor
+
+
+- story: three ways to go -- 2-- email
+  steps:
+  # - action: utter_default
+  - intent: send_email
+  - action: utter_send_email
+
+
+- story: three ways to go -- 3-- phone
+  steps:
+  # - action: utter_default
+  - intent: call_phone
+  - action: utter_call_phone

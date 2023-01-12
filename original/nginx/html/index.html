@@ -1,0 +1,91 @@
+<html>
+  <body>
+    <head>
+      <title>Hal9001 - Chatbot</title>
+      <meta charset="utf-8">
+        <link rel="stylesheet" href="css/styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <link href="https://fonts.googleapis.com/css?family=PT+Sans|Playfair+Display:900&display=swap" rel="stylesheet"> -->
+    </head>
+
+    <div id="wrapper">
+
+      <header>
+          <h1>Hal 9001</h1>
+      </header>
+
+      <nav>
+          <ul>
+              <li><a href="index.html">Home</a></li> 
+              <li><a href="clubs.html">Clubs</a></li>
+              <li><a href="events.html">Events</a></li>
+              <li><a href="contact.html">Contact</a></li>
+          </ul>
+      </nav>
+
+      <main>	
+
+        <div id="events">
+          <h1>I'm sorry, Dave. I'm afraid I can't do that.</h1>
+          <br>
+          <br>
+          <figure>
+              <img src="images/hal_picture.jpg" alt="students-with-folder" width="1024" height="768">
+              <figcaption>Fig1 - Hal Talking</figcaption>
+          </figure>
+
+          <h2>What you can do with Hal</h2>
+          <article class="grid">
+              <section>
+                  <ul>
+                      <li>Get to know more information about Hal9001 Company</li>            
+                  </ul>
+              </section>
+
+              <section>
+                  <ul>
+                      <li>Track Orders</li>            
+                  </ul>
+              </section>
+
+              <section>
+                  <ul>
+                      <li>Chat about movies and jokes</li>             
+                  </ul>
+              </section>
+          </article>
+          <br>
+          <br>
+          <br>
+          <a href="https://2001.fandom.com/wiki/HAL_9000" target="_blank"> For More information ~</a>
+      </div>
+
+      </main>
+
+      <footer>
+          <p>&copy; Copyright 2022. All Rights Reserved.</p>
+          <p><a href="mailto:xinyuanchenac@gmail.com">contact@xinyuanchen_THE_DEVELOPER.net</a></p>
+      </footer>
+      
+  </div>
+
+    <script>!(function () {
+      let e = document.createElement("script"),
+        t = document.head || document.getElementsByTagName("head")[0];
+      (e.src =
+        "https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.js"),
+        (e.async = !0),
+        (e.onload = () => {
+          window.WebChat.default(
+            {
+              customData: { language: "en" },
+              socketUrl: "http://118.31.117.6:5005",
+            },
+            null
+          );
+        }),
+        t.insertBefore(e, t.firstChild);
+    })();
+    </script>
+  </body>
+</html>
